@@ -2,12 +2,14 @@ import ActionButtons from "@/components/ActionButtons"
 import FindKim from "@/components/FindKim"
 import PriceList from "@/components/PriceList"
 import Results from "@/components/Results"
+import Salon from "@/components/Salon"
 import Reviews from "@/components/Reviews"
 import Shell from "@/components/Shell"
 import StatusBadge from "@/components/StatusBadge"
 import WeekDiary from "@/components/WeekDiary"
 import { business, dayNames, openingHours } from "@/lib/business"
 import { jsonLd } from "@/lib/json-ld"
+import { salonPhotos } from "@/lib/services"
 
 const salonSchema = {
   "@context": "https://schema.org",
@@ -32,6 +34,7 @@ const salonSchema = {
     closes: h.close,
   })),
   founder: { "@type": "Person", name: business.owner, jobTitle: "Hairdresser and barber" },
+  image: salonPhotos.map((photo) => `${business.siteUrl}${photo.src}`),
   sameAs: [business.facebookUrl],
 }
 
@@ -66,6 +69,8 @@ export default function Home() {
           </div>
         </aside>
       </section>
+
+      <Salon />
 
       <Results />
 

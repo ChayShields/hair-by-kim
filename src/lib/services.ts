@@ -51,6 +51,12 @@ export type Photo = { src: string; alt: string; width: number; height: number }
 export type Result = { caption: string; before?: Photo; after: Photo }
 
 export const reviews: Review[] = []
+
+// Photos of Kim's home salon (supplied by Kim via Chay). No people in shot.
+export const salonPhotos: Photo[] = [
+  { src: "/salon/salon-1.jpg", alt: "Kim's salon: two black styling chairs in front of glitter-framed mirrors, with a basin and white metro tiles", width: 1080, height: 1080 },
+  { src: "/salon/salon-2.jpg", alt: "Kim's salon: a shelf of purple and black towels above the basin, with two styling chairs and glitter-framed mirrors", width: 1080, height: 1080 },
+]
 export const results: Result[] = [
   {
     caption: "Face frame and half a head of fine weaves, blending grey hair.",
