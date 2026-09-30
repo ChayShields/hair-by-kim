@@ -36,10 +36,10 @@ export const business = {
 export type Hours = { day: number; open: string; close: string }
 
 export const openingHours: Hours[] = [
-  { day: 3, open: "10:00", close: "17:30" },
-  { day: 4, open: "10:00", close: "17:30" },
-  { day: 5, open: "10:00", close: "17:30" },
-  { day: 6, open: "08:00", close: "15:00" },
+  { day: 3, open: "09:30", close: "17:00" },
+  { day: 4, open: "07:00", close: "10:00" },
+  { day: 5, open: "09:30", close: "17:00" },
+  { day: 6, open: "07:30", close: "14:00" },
 ]
 
 export const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] as const

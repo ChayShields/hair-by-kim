@@ -3,7 +3,7 @@
 import { openStatus } from "@/lib/uk-time"
 import { useEpochMinute } from "./useEpochMinute"
 
-// "Open now, until 5:30pm" worked out from Kim's real hours in UK time.
+// "Open now, until 5pm" worked out from Kim's real hours in UK time.
 // Renders nothing on the server (the page is static and would go stale),
 // then fills in on the visitor's phone. Space is reserved so nothing jumps.
 export default function StatusBadge({ className = "" }: { className?: string }) {
