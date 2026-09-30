@@ -39,7 +39,7 @@ Kim works from home. Set `showAddress: false` in `src/lib/business.ts`. The page
 
 ## Design
 
-Direction: "the appointment diary". Pale-blue ruled paper on a 2rem baseline, a pink margin line, a steel-ring binder, a pink highlighter for open hours and the Call button, ballpoint-blue handwriting for small notes. Fonts: Bricolage Grotesque, Hanken Grotesk, Reenie Beanie (via `next/font`, self-hosted at build).
+Direction: "the appointment diary". Lavender-white ruled paper on a 2rem baseline, a purple margin line, a near-black steel-ring binder, a purple highlighter for open hours and the Call button, violet-ink handwriting for small notes. The purple and black come from Kim's business card. Fonts: Bricolage Grotesque, Hanken Grotesk, Reenie Beanie (via `next/font`, self-hosted at build).
 
 ## Security
 

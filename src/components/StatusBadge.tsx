@@ -18,7 +18,7 @@ export default function StatusBadge({ className = "" }: { className?: string }) 
             aria-hidden
             className={`inline-block size-3 rounded-full border-2 border-ink ${status.open ? "bg-highlight" : "bg-paper"}`}
           />
-          <span className={status.open ? "marker marker-strong px-1" : "text-pencil"}>{status.text}</span>
+          <span className={status.open ? "marker px-1" : "text-pencil"}>{status.text}</span>
         </span>
       ) : null}
     </p>

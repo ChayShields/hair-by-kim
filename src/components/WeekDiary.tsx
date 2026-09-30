@@ -9,8 +9,8 @@ import { useEpochMinute } from "./useEpochMinute"
 const WEEK = [1, 2, 3, 4, 5, 6, 0]
 
 // The week as diary lines. Open hours are highlighted as the section is read
-// (the page's one authored moment); closed days are crossed through in
-// ballpoint. Today gets a pencilled arrow once the page is running.
+// (the page's one authored moment); closed days are written plainly in
+// violet ink. Today gets a pencilled arrow once the page is running.
 export default function WeekDiary() {
   const ref = useRef<HTMLDivElement>(null)
   const [inked, setInked] = useState(false)

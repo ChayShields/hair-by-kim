@@ -1,25 +1,26 @@
 @import "tailwindcss";
 
 /*
-  The appointment diary. Everything sits on a 2rem baseline: the pale-blue
+  The appointment diary. Everything sits on a 2rem baseline: the lavender-white
   rules are drawn from the same unit as every line-height and vertical gap,
   so text really does sit on the ruled lines.
 */
 :root {
   --line: 2rem;
 
-  --paper: #f4f7fc;
-  --paper-shade: #e8eef8;
-  --rule: #c6d4e8;
-  --margin: #ee7fa3;
-  --ink: #1b2233;
-  --pencil: #4f5b73;
-  --biro: #1e3a9b;
-  --highlight: #ff5fa2;
-  --highlight-soft: #ffd0e5;
-  --binder: #10424c;
-  --binder-deep: #0a2c33;
-  --steel: #b9c3d2;
+  --paper: #f8f5fa;
+  --paper-shade: #eee8f2;
+  --rule: #d9cfe2;
+  --margin: #b06ab8;
+  --ink: #1c1620;
+  --pencil: #5a5062;
+  --biro: #4a2478;
+  --highlight: #8a3a94;
+  --highlight-hover: #a04aab;
+  --highlight-soft: #ead6ee;
+  --binder: #221a26;
+  --binder-deep: #130e16;
+  --steel: #c4c0c9;
 }
 
 @theme inline {
@@ -58,7 +59,7 @@ body {
   overflow-x: clip;
 }
 
-/* the pink margin line of an exercise book */
+/* the purple margin line of an exercise book */
 body::before {
   content: "";
   position: absolute;
@@ -98,7 +99,7 @@ h3 {
 
 ::selection {
   background: var(--highlight);
-  color: var(--ink);
+  color: var(--paper);
 }
 
 :focus-visible {
@@ -145,7 +146,7 @@ a {
   inset: auto 0 -0.55rem 0;
   height: 1.1rem;
   background-image:
-    radial-gradient(ellipse 4px 9px at 50% 50%, var(--steel) 0 55%, #6d7889 60% 78%, transparent 82%);
+    radial-gradient(ellipse 4px 9px at 50% 50%, var(--steel) 0 55%, #6f6a78 60% 78%, transparent 82%);
   background-size: 2.75rem 100%;
   background-repeat: repeat-x;
   pointer-events: none;
@@ -168,7 +169,7 @@ a {
     position: absolute;
     inset: 0;
     /* authored tile, one per two rules: punched hole, then a steel loop through it with a highlight */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='64' viewBox='0 0 88 64'%3E%3Ccircle cx='66' cy='32' r='8' fill='%23051a1f'/%3E%3Ccircle cx='66' cy='33' r='8' fill='none' stroke='%2306242a' stroke-width='2'/%3E%3Crect x='14' y='24' width='62' height='16' rx='8' fill='none' stroke='%23566173' stroke-width='5'/%3E%3Crect x='14' y='24' width='62' height='16' rx='8' fill='none' stroke='%23c9d2df' stroke-width='3'/%3E%3Cpath d='M24 23.5h38' stroke='%23ffffff' stroke-width='1.2' stroke-linecap='round' opacity='.85'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='64' viewBox='0 0 88 64'%3E%3Ccircle cx='66' cy='32' r='8' fill='%230a070c'/%3E%3Ccircle cx='66' cy='33' r='8' fill='none' stroke='%230d0910' stroke-width='2'/%3E%3Crect x='14' y='24' width='62' height='16' rx='8' fill='none' stroke='%235a5563' stroke-width='5'/%3E%3Crect x='14' y='24' width='62' height='16' rx='8' fill='none' stroke='%23cfcad6' stroke-width='3'/%3E%3Cpath d='M24 23.5h38' stroke='%23ffffff' stroke-width='1.2' stroke-linecap='round' opacity='.85'/%3E%3C/svg%3E");
     background-size: 88px calc(var(--line) * 2);
     background-repeat: repeat-y;
   }
@@ -184,9 +185,6 @@ a {
   background-size: 100% 100%;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
-}
-.marker-strong {
-  background-image: linear-gradient(transparent 0 28%, var(--highlight) 28% 94%, transparent 94%);
 }
 
 /* the one authored moment: open hours are highlighted as the page is read */
@@ -232,7 +230,7 @@ a {
   color: var(--ink);
   text-decoration: none;
   background: var(--paper);
-  box-shadow: 0 0.55rem 1rem -0.6rem rgba(27, 34, 51, 0.55);
+  box-shadow: 0 0.55rem 1rem -0.6rem rgba(28, 22, 32, 0.55);
   transition:
     transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1),
@@ -240,16 +238,17 @@ a {
 }
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0.8rem 1.2rem -0.7rem rgba(27, 34, 51, 0.6);
+  box-shadow: 0 0.8rem 1.2rem -0.7rem rgba(28, 22, 32, 0.6);
 }
 .btn:active {
   transform: translateY(0);
 }
 .btn-call {
   background: var(--highlight);
+  color: var(--paper);
 }
 .btn-call:hover {
-  background: #ff7ab4;
+  background: var(--highlight-hover);
 }
 .btn svg {
   width: 1.35rem;

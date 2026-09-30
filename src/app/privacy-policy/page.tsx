@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
 
       <h2>Who is responsible</h2>
       <p>
-        {business.name}, {business.town}, is the data controller. You can reach Kim on{" "}
+        {business.owner}, trading as {business.name} in {business.town}, is the data controller. You can reach Kim on{" "}
         <a href={`tel:${business.phoneE164}`}>{business.phoneDisplay}</a>.
       </p>
 

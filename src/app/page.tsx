@@ -31,6 +31,7 @@ const salonSchema = {
     opens: h.open,
     closes: h.close,
   })),
+  founder: { "@type": "Person", name: business.owner, jobTitle: "Hairdresser and barber" },
   sameAs: [business.facebookUrl],
 }
 
@@ -44,12 +45,12 @@ export default function Home() {
           <h1 id="hero-title" className="font-display text-[2.9rem] font-extrabold leading-[calc(var(--line)*2)] min-[360px]:text-[3.4rem] sm:text-[4.5rem] sm:leading-[calc(var(--line)*3)] lg:text-[6rem] lg:leading-[calc(var(--line)*3)]">
             Hair by Kim
           </h1>
-          <p className="font-display m-0 text-2xl font-semibold leading-[calc(var(--line)*1.5)]">
-            Hairdresser in {business.town}
+          <p className="font-display m-0 text-2xl font-semibold leading-[var(--line)]">
+            Hairdresser and barber in {business.town}
           </p>
           <StatusBadge className="mt-[var(--line)]" />
           <p className="m-0 mt-[var(--line)] max-w-[34ch] text-lg">
-            Cuts, colour, perms and blow-dries in a relaxed home salon. Open Wednesday to Saturday.
+            Cuts, colour, perms and blow-dries in a relaxed home salon. Qualified level 3 hairdresser and barber since 1999.
           </p>
           <div id="hero-actions" className="mt-[var(--line)] max-w-md">
             <ActionButtons />

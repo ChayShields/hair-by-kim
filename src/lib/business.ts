@@ -4,6 +4,8 @@
 
 export const business = {
   name: "Hair by Kim",
+  // Trading name of Kim Bennett (printed on her business card).
+  owner: "Kim Bennett",
   // TODO before launch: replace with the real domain once it is registered
   // (canonical URLs, sitemap, schema and social cards all read this).
   siteUrl: "https://hair-by-kim.vercel.app",
