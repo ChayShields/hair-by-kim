@@ -20,7 +20,7 @@ npm run lint
 | Phone, WhatsApp, hours, address, Facebook link, domain, whether the address is shown | `src/lib/business.ts` |
 | Prices and services | `src/lib/services.ts` |
 | Client reviews (word for word) | `reviews` list in `src/lib/services.ts` |
-| Before/after photos | `results` list in `src/lib/services.ts` (put files in `public/`) |
+| Recent work photos (before/after pairs or single shots) | `results` list in `src/lib/services.ts`, image files in `public/work/`. Captions describe the work only: no client names, no colour formulas. Hair-only crops, no faces or identifying tattoos. |
 | Colours, type, the ruled-paper look | `src/app/globals.css`, `src/app/layout.tsx` |
 | Kim's logo (header, favicon, home-screen icon, share card) | `public/logo.png`, `src/app/icon.png`, `src/app/apple-icon.png` |
 | Privacy Policy / Terms | `src/app/privacy-policy`, `src/app/terms-of-service` |

@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { business } from "@/lib/business"
+import { results } from "@/lib/services"
 
 // The binder: a strip of steel rings across the top on phones, a rail down
 // the left edge on wide screens, then Kim's round logo and a plain diary-line nav.
@@ -17,6 +18,11 @@ export default function Header() {
           <Link href="/#prices" className="text-ink">
             Prices
           </Link>
+          {results.length > 0 ? (
+            <Link href="/#work" className="text-ink">
+              Work
+            </Link>
+          ) : null}
           <Link href="/#find-kim" className="text-ink">
             Find Kim
           </Link>
