@@ -70,10 +70,6 @@ export default function Home() {
         </aside>
       </section>
 
-      <Salon />
-
-      <Results />
-
       <div className="grid gap-x-16 lg:grid-cols-[1.25fr_1fr] lg:items-start">
       <section id="prices" aria-labelledby="prices-title" className="py-[calc(var(--line)*2)]">
         <h2 id="prices-title" className="font-display text-3xl font-bold leading-[calc(var(--line)*2)] sm:text-4xl">
@@ -89,6 +85,10 @@ export default function Home() {
 
       <FindKim />
       </div>
+
+      <Salon />
+
+      <Results />
 
       <Reviews />
     </Shell>

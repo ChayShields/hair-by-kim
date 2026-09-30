@@ -19,7 +19,7 @@ npm run lint
 |---|---|
 | Phone, WhatsApp, hours, address, Facebook link, domain, whether the address is shown | `src/lib/business.ts` |
 | Prices and services | `src/lib/services.ts` |
-| Client reviews (word for word) | `reviews` list in `src/lib/services.ts` |
+| Client reviews (word for word; first name and initial only) | `reviews` list in `src/lib/services.ts` |
 | Salon photos (The salon section, also used in the search markup) | `salonPhotos` list in `src/lib/services.ts`, image files in `public/salon/` |
 | Recent work photos (before/after pairs or single shots) | `results` list in `src/lib/services.ts`, image files in `public/work/`. Captions describe the work only: no client names, no colour formulas. Hair-only crops, no faces or identifying tattoos. |
 | Colours, type, the ruled-paper look | `src/app/globals.css`, `src/app/layout.tsx` |
@@ -36,7 +36,6 @@ Kim works from home. Set `showAddress: false` in `src/lib/business.ts`. The page
 
 - Replace `siteUrl` in `src/lib/business.ts` with the real domain (canonical URLs, sitemap, schema and share card all read it).
 - Add real reviews and before/after photos from Kim's Facebook page.
-- Confirm with Kim: does "Cut £22" cover all cuts (women and men)? The £18 gents cut is confirmed.
 - If GA4 is added, it needs a cookie-consent banner and a Privacy Policy update first (the policy currently says there are no cookies or analytics).
 
 ## Design

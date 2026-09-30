@@ -2,11 +2,9 @@
 // are how a client looks for things. `from: true` only where Kim's list said
 // "from". `long` is the long-hair price where Kim gave one.
 //
-// OPEN QUESTIONS for Kim (Chay to confirm):
-//  - Gents cut £18: confirmed still offered (Chay, 2026-09-30).
-//  - "Cuts £22" on the updated list replaced "Women's cut £22", so the name is
-//    plain "Cut". Confirm nobody is mislabelled.
-//  - Kim may add more services: add a line below, nothing else changes.
+// Confirmed by Chay (2026-09-30): Cut is £22 (long hair £26) and covers every
+// cut; the gents cut is £18 and still offered.
+// Kim may add more services: add a line below, nothing else changes.
 
 export type Price = { amount: number; from?: boolean }
 export type Service = { name: string; price: Price; long?: Price }
@@ -50,7 +48,35 @@ export type Photo = { src: string; alt: string; width: number; height: number }
 // Captions describe the work only (no client names, no colour formulas).
 export type Result = { caption: string; before?: Photo; after: Photo }
 
-export const reviews: Review[] = []
+// Real Facebook reviews of Kim, word for word (sent by Chay 2026-09-30).
+// Names are shown as first name and initial. All four are 5-star reviews
+// (confirmed by Chay).
+export const reviews: Review[] = [
+  {
+    quote:
+      "I went to have my hair done by Kim this morning and what an amazing job she has done! After having bad experiences in other hair dressers, trusting someone is very hard! I won’t be going anywhere else from now on to have my hair cut!",
+    name: "Eboymai B.",
+    source: "five star Facebook review",
+  },
+  {
+    quote:
+      "I had my hair coloured and trimmed by Kim today for the first time. I love it I have long hair was worried I would never find another hairdresser I would trust with my hair but Kim is amazing so glad I found her not going anywhere else now.",
+    name: "Louise P.",
+    source: "five star Facebook review",
+  },
+  {
+    quote:
+      "Very professional and I came away feeling a million dollars. My hair felt so limp and lifeless when I walked in and upon leaving my hair felt amazing. I would highly recommend Kim to anyone looking for a professional service",
+    name: "Donna M.",
+    source: "five star Facebook review",
+  },
+  {
+    quote:
+      "Was welcomed in and after a wash and consultation my very long hair lost a few dry inches and had long layers added. Dried and straightened with professional products and I am one happy customer. Am happy that my hair received exactly what I asked for, and I haven't had that in a very long time with previous hairdressers! Kim is confident and kind and I definitely recommend her",
+    name: "Melanie Q.",
+    source: "five star Facebook review",
+  },
+]
 
 // Photos of Kim's home salon (supplied by Kim via Chay). No people in shot.
 export const salonPhotos: Photo[] = [

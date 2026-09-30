@@ -18,14 +18,14 @@ export default function Header() {
           <Link href="/#prices" className="text-ink">
             Prices
           </Link>
+          <Link href="/#find-kim" className="text-ink">
+            Find Kim
+          </Link>
           {results.length > 0 ? (
             <Link href="/#work" className="text-ink">
               Work
             </Link>
           ) : null}
-          <Link href="/#find-kim" className="text-ink">
-            Find Kim
-          </Link>
         </nav>
       </div>
     </header>
