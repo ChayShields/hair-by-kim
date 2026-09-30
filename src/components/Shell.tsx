@@ -3,10 +3,10 @@ import Footer from "./Footer"
 import Header from "./Header"
 
 // Common frame for every page: binder, content column, footer, phone action bar.
-export default function Shell({ children, brand = true }: { children: React.ReactNode; brand?: boolean }) {
+export default function Shell({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <Header brand={brand} />
+      <Header />
       <main id="main" className="mx-auto max-w-6xl pl-[30px] pr-[18px] lg:pl-[9.5rem] lg:pr-16">
         {children}
       </main>

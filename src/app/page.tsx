@@ -37,7 +37,7 @@ const salonSchema = {
 
 export default function Home() {
   return (
-    <Shell brand={false}>
+    <Shell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(salonSchema) }} />
 
       <section aria-labelledby="hero-title" className="grid gap-[calc(var(--line)*2)] pb-[calc(var(--line)*2)] pt-[calc(var(--line)*2)] lg:grid-cols-[1.25fr_1fr] lg:items-start">

@@ -11,15 +11,15 @@
   --paper: #f8f5fa;
   --paper-shade: #eee8f2;
   --rule: #d9cfe2;
-  --margin: #b06ab8;
+  --margin: #b59bc4;
   --ink: #1c1620;
   --pencil: #5a5062;
-  --biro: #4a2478;
-  --highlight: #8a3a94;
-  --highlight-hover: #a04aab;
-  --highlight-soft: #ead6ee;
-  --binder: #221a26;
-  --binder-deep: #130e16;
+  --biro: #4b2f63;
+  --highlight: #784f8b;
+  --highlight-hover: #8d63a0;
+  --highlight-soft: #e6dcec;
+  --binder: #1a1618;
+  --binder-deep: #0f0e0c;
   --steel: #c4c0c9;
 }
 
@@ -169,7 +169,7 @@ a {
     position: absolute;
     inset: 0;
     /* authored tile, one per two rules: punched hole, then a steel loop through it with a highlight */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='64' viewBox='0 0 88 64'%3E%3Ccircle cx='66' cy='32' r='8' fill='%230a070c'/%3E%3Ccircle cx='66' cy='33' r='8' fill='none' stroke='%230d0910' stroke-width='2'/%3E%3Crect x='14' y='24' width='62' height='16' rx='8' fill='none' stroke='%235a5563' stroke-width='5'/%3E%3Crect x='14' y='24' width='62' height='16' rx='8' fill='none' stroke='%23cfcad6' stroke-width='3'/%3E%3Cpath d='M24 23.5h38' stroke='%23ffffff' stroke-width='1.2' stroke-linecap='round' opacity='.85'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='64' viewBox='0 0 88 64'%3E%3Ccircle cx='66' cy='32' r='8' fill='%230f0e0c'/%3E%3Ccircle cx='66' cy='33' r='8' fill='none' stroke='%230f0e0c' stroke-width='2'/%3E%3Crect x='14' y='24' width='62' height='16' rx='8' fill='none' stroke='%235a5563' stroke-width='5'/%3E%3Crect x='14' y='24' width='62' height='16' rx='8' fill='none' stroke='%23cfcad6' stroke-width='3'/%3E%3Cpath d='M24 23.5h38' stroke='%23ffffff' stroke-width='1.2' stroke-linecap='round' opacity='.85'/%3E%3C/svg%3E");
     background-size: 88px calc(var(--line) * 2);
     background-repeat: repeat-y;
   }
