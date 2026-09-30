@@ -1,0 +1,268 @@
+@import "tailwindcss";
+
+/*
+  The appointment diary. Everything sits on a 2rem baseline: the pale-blue
+  rules are drawn from the same unit as every line-height and vertical gap,
+  so text really does sit on the ruled lines.
+*/
+:root {
+  --line: 2rem;
+
+  --paper: #f4f7fc;
+  --paper-shade: #e8eef8;
+  --rule: #c6d4e8;
+  --margin: #ee7fa3;
+  --ink: #1b2233;
+  --pencil: #4f5b73;
+  --biro: #1e3a9b;
+  --highlight: #ff5fa2;
+  --highlight-soft: #ffd0e5;
+  --binder: #10424c;
+  --binder-deep: #0a2c33;
+  --steel: #b9c3d2;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-shade: var(--paper-shade);
+  --color-rule: var(--rule);
+  --color-margin: var(--margin);
+  --color-ink: var(--ink);
+  --color-pencil: var(--pencil);
+  --color-biro: var(--biro);
+  --color-highlight: var(--highlight);
+  --color-highlight-soft: var(--highlight-soft);
+  --color-binder: var(--binder);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+  --font-hand: var(--font-hand);
+}
+
+html {
+  background: var(--binder-deep);
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: var(--line);
+  background-color: var(--paper);
+  /* ruled lines: one hairline per baseline, sitting under each text line */
+  background-image: linear-gradient(to bottom, transparent calc(var(--line) - 1px), var(--rule) calc(var(--line) - 1px));
+  background-size: 100% var(--line);
+  padding-bottom: 5.5rem; /* room for the phone action bar */
+  overflow-x: clip;
+}
+
+/* the pink margin line of an exercise book */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 1.1rem;
+  width: 2px;
+  background: var(--margin);
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (min-width: 64rem) {
+  body {
+    padding-bottom: 0;
+  }
+  body::before {
+    left: 7.75rem;
+  }
+}
+
+/* ---- type ---- */
+.font-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+.font-hand {
+  font-family: var(--font-hand), cursive;
+  color: var(--biro);
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  margin: 0;
+}
+
+::selection {
+  background: var(--highlight);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--biro);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* themed scrollbars, so the browser's own chrome belongs to the page too */
+html {
+  scrollbar-color: var(--pencil) var(--paper-shade);
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper-shade);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--pencil);
+  border-radius: 6px;
+  border: 3px solid var(--paper-shade);
+}
+
+a {
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 2px;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* ---- binder rings (left rail on wide screens, top strip on phones) ---- */
+.binder-strip {
+  background: linear-gradient(180deg, var(--binder) 0, var(--binder-deep) 100%);
+  position: relative;
+  z-index: 2;
+}
+.binder-strip::after {
+  /* punched holes with steel loops, every two rules */
+  content: "";
+  position: absolute;
+  inset: auto 0 -0.55rem 0;
+  height: 1.1rem;
+  background-image:
+    radial-gradient(ellipse 4px 9px at 50% 50%, var(--steel) 0 55%, #6d7889 60% 78%, transparent 82%);
+  background-size: 2.75rem 100%;
+  background-repeat: repeat-x;
+  pointer-events: none;
+}
+
+.rail {
+  display: none;
+}
+@media (min-width: 64rem) {
+  .rail {
+    display: block;
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 5.5rem;
+    background: linear-gradient(90deg, var(--binder-deep), var(--binder));
+    z-index: 2;
+  }
+  .rail::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* authored tile, one per two rules: punched hole, then a steel loop through it with a highlight */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='64' viewBox='0 0 88 64'%3E%3Ccircle cx='66' cy='32' r='8' fill='%23051a1f'/%3E%3Ccircle cx='66' cy='33' r='8' fill='none' stroke='%2306242a' stroke-width='2'/%3E%3Crect x='14' y='24' width='62' height='16' rx='8' fill='none' stroke='%23566173' stroke-width='5'/%3E%3Crect x='14' y='24' width='62' height='16' rx='8' fill='none' stroke='%23c9d2df' stroke-width='3'/%3E%3Cpath d='M24 23.5h38' stroke='%23ffffff' stroke-width='1.2' stroke-linecap='round' opacity='.85'/%3E%3C/svg%3E");
+    background-size: 88px calc(var(--line) * 2);
+    background-repeat: repeat-y;
+  }
+  .binder-strip {
+    display: none;
+  }
+}
+
+/* ---- highlighter ---- */
+.marker {
+  background-image: linear-gradient(transparent 0 28%, var(--highlight-soft) 28% 94%, transparent 94%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.marker-strong {
+  background-image: linear-gradient(transparent 0 28%, var(--highlight) 28% 94%, transparent 94%);
+}
+
+/* the one authored moment: open hours are highlighted as the page is read */
+.ink-line {
+  background-image: linear-gradient(transparent 0 26%, var(--highlight-soft) 26% 96%, transparent 96%);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--i, 0) * 140ms);
+}
+.is-inked .ink-line {
+  background-size: 100% 100%;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ink-line {
+    background-size: 100% 100%;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+/* if scripting is off the highlight must still be there */
+.no-js-ink .ink-line {
+  background-size: 100% 100%;
+}
+
+/* ---- actions ---- */
+@layer components {
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 3.25rem;
+  padding: 0 1.4rem;
+  border: 2px solid var(--ink);
+  border-radius: 0.5rem;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1;
+  color: var(--ink);
+  text-decoration: none;
+  background: var(--paper);
+  box-shadow: 0 0.55rem 1rem -0.6rem rgba(27, 34, 51, 0.55);
+  transition:
+    transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 180ms;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.8rem 1.2rem -0.7rem rgba(27, 34, 51, 0.6);
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn-call {
+  background: var(--highlight);
+}
+.btn-call:hover {
+  background: #ff7ab4;
+}
+.btn svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  flex: none;
+}
+}
+
+/* dotted leader between a service and its price, like a price list */
+.leader {
+  flex: 1;
+  min-width: 1rem;
+  border-bottom: 2px dotted var(--pencil);
+  transform: translateY(-0.45rem);
+  opacity: 0.55;
+}
