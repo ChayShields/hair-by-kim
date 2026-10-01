@@ -40,7 +40,7 @@ export default function Results() {
                 <Tile photo={item.after} />
               </div>
             )}
-            <p className="m-0 mt-[var(--line)] max-w-[40ch]">{item.caption}</p>
+            {item.caption ? <p className="m-0 mt-[var(--line)] max-w-[40ch]">{item.caption}</p> : null}
           </li>
         ))}
       </ul>

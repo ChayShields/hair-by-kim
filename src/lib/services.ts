@@ -45,7 +45,7 @@ export const serviceGroups: ServiceGroup[] = [
 export type Review = { quote: string; name: string; source?: string }
 export type Photo = { src: string; alt: string; width: number; height: number }
 // One piece of work: a before-and-after pair, or a single finished photo.
-// Captions describe the work only (no client names, no colour formulas).
+// Captions describe the work only (no client names, no colour formulas); an empty caption shows no text.
 export type Result = { caption: string; before?: Photo; after: Photo }
 
 // Real Facebook reviews of Kim, word for word (sent by Chay 2026-09-30).
@@ -100,8 +100,8 @@ export const results: Result[] = [
     after: { src: "/work/foils-2-after.jpg", alt: "The same hair after colouring, honey and caramel highlights with a blended root", width: 921, height: 1228 },
   },
   {
-    caption: "Rich brunette colour, styled in soft curls.",
-    after: { src: "/work/curls.jpg", alt: "Long dark brown hair styled in loose glossy curls, seen from behind", width: 717, height: 955 },
+    caption: "",
+    after: { src: "/work/bob.jpg", alt: "Deep burgundy short bob with a tapered undercut at the nape, seen from behind", width: 520, height: 693 },
   },
 ]
 
