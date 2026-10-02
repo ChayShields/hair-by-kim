@@ -20,9 +20,9 @@ export default function Footer() {
           </a>
         </nav>
         <p className="text-sm">
-          &copy; {new Date().getFullYear()} {business.name}. Designed and developed by{" "}
-          <a href="https://hireme.link" className="underline" target="_blank" rel="noopener noreferrer">
-            Chay Shields
+          &copy; {new Date().getFullYear()} {business.name}. Designed and developed by Chay Shields at{" "}
+          <a href="https://buildory.co.uk" className="underline" target="_blank" rel="noopener noreferrer">
+            Buildory
           </a>
         </p>
       </div>
